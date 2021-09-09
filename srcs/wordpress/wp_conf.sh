@@ -4,3 +4,5 @@ if [ ! -f /var/www/html/wp-config.php ]; then
 	mv wordpress ../var/www/kseed/wordpress
 	rm -rf latest.tar.gz
 	cp ../files/wp-config.php ../var/www/kseed/wordpress
+fi
+exec "$@"
