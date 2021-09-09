@@ -1,0 +1,35 @@
+version: '1.3'
+networks:
+  kseed_net:
+    name: kseed_net
+    driver: bridge
+
+services: 
+  nginx:
+    build:
+      context: ./srcs/nginx/
+      dockerfile: Dockerfile
+    ports:
+      443:443
+    container_name: nginx
+  mysql:
+    image: mariadb
+    build:
+      context: ./srcs/mysql
+      dockerfile: Dockerfile
+    environment:
+      - "DB_NAME=wordpress"
+      - "DB_USER=kseed"
+      - "DB_PASS=kseed"
+      - "ROOT_PASS=kseed123"
+    container_name: mariadb
+    expose: 
+      - "3306"
+  wordpress:
+    image: wordpress
+    build: 
+      context: ./srcs/wordpress
+      dockerfile: Dockerfile
+    expose:
+      - "9000"
+      
