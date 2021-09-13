@@ -1,7 +1,6 @@
 version: '3.3'
 networks:
   kseed_net:
-    name: kseed_net
     driver: bridge
 
 services: 
@@ -42,15 +41,13 @@ services:
 volumes:
   wordpress:
     driver: local
-    name: wordpress
     driver_opts: 
       type: none
       o: bind
-      device: /home/kseed/Docker/wordpress
+      device: /home/kseed/filesVM/wordpress
   mysql:
     driver: local
-    name: mysql
     driver_opts:
       type: none
       o: bind
-      device: /home/kseed/Docker/mariadb
+      device: /home/kseed/filesVM/mariadb
