@@ -43,11 +43,13 @@ volumes:
     driver: local
     driver_opts: 
       type: none
-      o: bind
+      o: bind:
+        create_host_path
       device: /home/kseed/filesVM/wordpress
   mysql:
     driver: local
     driver_opts:
       type: none
-      o: bind
+      o: bind:
+        create_host_path
       device: /home/kseed/filesVM/mariadb
