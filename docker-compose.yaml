@@ -39,19 +39,18 @@ services:
     expose:
       - "9000"
 
-  volumes: 
-    wordpress:
-      driver: local
-      name: wordpress
-      driver_opts: 
-        type: none
-        o: bind
-        device: /home/kseed/Docker/wordpress
-    mysql:
-      driver: local
-      name: mysql
-      driver_opts: 
-        type: none
-        o: bind
-        device: /home/kseed/Docker/mariadb
-      
+volumes:
+  wordpress:
+    driver: local
+    name: wordpress
+    driver_opts: 
+      type: none
+      o: bind
+      device: /home/kseed/Docker/wordpress
+  mysql:
+    driver: local
+    name: mysql
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/kseed/Docker/mariadb
