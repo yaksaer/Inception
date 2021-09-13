@@ -7,5 +7,6 @@ RUN mkdir files
 
 COPY nginx_conf.sh ./files/
 COPY config ./files/
+RUN chmod 744 ./files/nginx_conf.sh
 
 CMD bash ./files/nginx_conf.sh
