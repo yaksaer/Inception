@@ -1,5 +1,5 @@
 start:
 	./dir_maker.sh
-	docker-compose docker-compose.yaml up
+	docker-compose -f docker-compose.yaml up
 down:
-	docker-compose docker-compose.yaml down
+	docker-compose -f docker-compose.yaml down
