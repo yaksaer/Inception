@@ -12,7 +12,7 @@ services:
     volumes: 
       - wordpress:/var/www/html
     ports:
-      443:443
+      - 443:443
     container_name: nginx
   mysql:
     image: mariadb
