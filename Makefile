@@ -3,3 +3,5 @@ start:
 	docker-compose -f docker-compose.yaml up
 down:
 	docker-compose -f docker-compose.yaml down
+re:
+	docker-compose -f docker-compose.yaml up --build
