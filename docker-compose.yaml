@@ -35,6 +35,11 @@ services:
       dockerfile: Dockerfile
     volumes: 
       - wordpress:/var/www/html
+    environment:
+      - "DB_NAME=wordpress"
+      - "DB_USER=kseed"
+      - "DB_PASS=kseed"
+      - "ROOT_PASS=kseed123"
     expose:
       - "9000"
      
@@ -43,13 +48,11 @@ volumes:
     driver: local
     driver_opts: 
       type: none
-      o: bind:
-        create_host_path
-      device: /home/kseed/filesVM/wordpress
+      o: bind
+      device: /home/kseed/files/wp
   mysql:
     driver: local
     driver_opts:
       type: none
-      o: bind:
-        create_host_path
-      device: /home/kseed/filesVM/mariadb
+      o: bind
+      device: /home/kseed/files/db
