@@ -3,5 +3,5 @@ if [ ! -d /etc/ssl/private/keyout.key ]; then
     -keyout /etc/ssl/keyout.key \
     -out /etc/ssl/sertif.crt
     mv ./files/config /etc/nginx/
-fi`
+fi
 exec "$@"
