@@ -10,6 +10,7 @@ services:
       dockerfile: Dockerfile
     volumes: 
       - wordpress:/var/www/html
+      - nginx:/etc/ssl/private/
     ports:
       - 443:443
     container_name: nginx
@@ -56,3 +57,9 @@ volumes:
       type: none
       o: bind
       device: /home/kseed/files/db
+  nginx:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/kseed/files/nginx
