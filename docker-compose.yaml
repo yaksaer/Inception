@@ -21,6 +21,7 @@ services:
       dockerfile: Dockerfile
     volumes: 
       - mysql:/var/lib/mysql
+    user: root
     environment:
       - "DB_NAME=wordpress"
       - "DB_USER=kseed"
