@@ -22,11 +22,7 @@ services:
     volumes: 
       - mysql:/var/lib/mysql
     user: root
-    environment:
-      - "DB_NAME=wordpress"
-      - "DB_USER=kseed"
-      - "DB_PASS=kseed"
-      - "ROOT_PASS=kseed123"
+    env_file: .env
     container_name: mariadb
     expose: 
       - "3306"
@@ -37,11 +33,7 @@ services:
       dockerfile: Dockerfile
     volumes: 
       - wordpress:/var/www/html
-    environment:
-      - "DB_NAME=wordpress"
-      - "DB_USER=kseed"
-      - "DB_PASS=kseed"
-      - "ROOT_PASS=kseed123"
+    env_file: .env
     expose:
       - "9000"
      
