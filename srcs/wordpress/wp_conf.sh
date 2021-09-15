@@ -13,7 +13,7 @@ if [ ! -f /var/www/html/wp-config.php ]; then
 	cd var/www/html/
 	wp core download --allow-root
 	chmod 744 /wp-config.php
-	mv /wp-config.php /var/www/html/
+	mv ./wp-config.php /var/www/html/
 	wp core install --allow-root --url=kseed.42.fr --title=kseed \
 		--admin_user=kseed --admin_password=kseed --admin_email=kseed@42.fr
 	wp user create --allow-root yaksaer yaksaer@mail.ru --user_pass=yaksaer
