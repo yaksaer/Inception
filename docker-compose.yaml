@@ -1,6 +1,7 @@
 version: '3.7'
 networks:
   kseed_net:
+    name: kseed_net
     driver: bridge
 
 services: 
@@ -25,13 +26,15 @@ services:
     volumes: 
       - wordpress:/var/www/html
     env_file: .env
+    container_name: wordpress
     depends_on: 
-      - mysql
+      - mariadb
     expose:
       - "9000"
     networks: 
       - kseed_net
   nginx:
+    image: nginx
     build:
       context: ./srcs/nginx/
       dockerfile: Dockerfile
