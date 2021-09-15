@@ -28,7 +28,7 @@ services:
     env_file: .env
     container_name: wordpress
     depends_on: 
-      - mariadb
+      - mysql
     expose:
       - "9000"
     networks: 
