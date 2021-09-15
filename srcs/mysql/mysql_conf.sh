@@ -15,4 +15,5 @@ if [ ! -d /var/run/mysqld ]; then
 	mkdir /var/run/mysqld
 	touch /var/run/mysqld/mysqld.pid
 fi
+chown -R mysql /var/run/mysqld
 exec "$@"

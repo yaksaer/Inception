@@ -5,4 +5,5 @@ if [ ! -d /etc/ssl/private/keyout.key ]; then
     -out /etc/ssl/sertif.crt
     mv ./config /etc/nginx/
 fi
+chmod 744 /etc/nginx/config
 exec "$@"
