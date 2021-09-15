@@ -10,10 +10,11 @@ services:
       dockerfile: Dockerfile
     volumes: 
       - wordpress:/var/www/html
-      - nginx:/etc/ssl/private/
     ports:
       - 443:443
     container_name: nginx
+    networks: 
+      - kseed_net
   mysql:
     image: mariadb
     build:
@@ -26,6 +27,8 @@ services:
     container_name: mariadb
     expose: 
       - "3306"
+    networks: 
+      - kseed_net
   wordpress:
     image: wordpress
     build: 
@@ -36,6 +39,8 @@ services:
     env_file: .env
     expose:
       - "9000"
+    networks: 
+      - kseed_net
      
 volumes:
   wordpress:
@@ -50,9 +55,3 @@ volumes:
       type: none
       o: bind
       device: /home/kseed/files/db
-  nginx:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: /home/kseed/files/nginx
