@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 sed -i 's/bind-ad/#bind-ad/g' /etc/mysql/mariadb.conf.d/50-server.cnf
 sed -i 's/#port /port /g' /etc/mysql/mariadb.conf.d/50-server.cnf
 chown -R mysql:mysql /var/lib/mysql
@@ -15,3 +16,4 @@ if [ ! -d /var/run/mysqld ]; then
 	touch /var/run/mysqld/mysqld.pid
 	mkinfo /var/run/mysqld/mysqld.sock
 fi
+exec "$@"
