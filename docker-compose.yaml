@@ -49,10 +49,10 @@ volumes:
     driver_opts: 
       type: none
       o: bind
-      device: /home/kseed/files/wp
+      device: /home/kseed/data/wp
   mysql:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /home/kseed/files/db
+      device: /home/kseed/data/db

@@ -1,13 +1,13 @@
-if [ ! -d /home/kseed/files ]; then
-	mkdir /home/kseed/files
+if [ ! -d /home/kseed/data ]; then
+	mkdir /home/kseed/data
 fi
-if [ ! -d /home/kseed/files/wp ]; then
-	mkdir /home/kseed/files/wp
+if [ ! -d /home/kseed/data/wp ]; then
+	mkdir /home/kseed/data/wp
 fi
-if [ ! -d /home/kseed/files/db ]; then
-	mkdir /home/kseed/files/db
+if [ ! -d /home/kseed/data/db ]; then
+	mkdir /home/kseed/data/db
 fi
-if [ ! -d /home/kseed/files/nginx ]; then
-	mkdir /home/kseed/files/nginx
+if [ ! -d /home/kseed/data/nginx ]; then
+	mkdir /home/kseed/data/nginx
 fi
 exec "$@"

@@ -18,5 +18,4 @@ if [ ! -f /var/www/html/wp-config.php ]; then
 		--admin_user=kseed --admin_password=kseed --admin_email=kseed@42.fr
 	wp user create --allow-root yaksaer yaksaer@mail.ru --user_pass=yaksaer
 fi
-service redis-server start
 exec "$@"
