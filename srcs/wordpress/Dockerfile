@@ -8,5 +8,5 @@ COPY wp_conf.sh ./wp_conf.sh
 COPY wp-config.php ./wp-config.php
 RUN chmod 744 ./wp_conf.sh
 
-ENTRYPOINT [ "./files/wp_conf.sh" ]
+ENTRYPOINT [ "./wp_conf.sh" ]
 CMD [ "/usr/sbin/php-fpm7.3", "--nodaemonize" ]
