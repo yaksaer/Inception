@@ -2,7 +2,7 @@ FROM debian:buster
 
 RUN apt-get update
 RUN apt-get -y upgrade
-RUN apt-get -y install redis-server wget vim
+RUN apt-get -y install redis-server wget vim php-fpm php-mysql php-mbstring php-gd php-redis php-xml
 
 COPY wp_conf.sh ./files/wp_conf.sh
 COPY wp-config.php ./files/wp-config.php
