@@ -7,6 +7,7 @@ RUN apt-get -y install nginx openssl vim
 COPY nginx_conf.sh ./
 COPY config ./
 RUN chmod 744 ./nginx_conf.sh
+RUN chmod 744 ./config
 
 ENTRYPOINT [ "./nginx_conf.sh" ]
 CMD [ "nginx", "-g", "daemon off;" ]
