@@ -4,7 +4,7 @@ sed -i 's/#port /port /g' /etc/mysql/mariadb.conf.d/50-server.cnf
 chown -R mysql:mysql /var/lib/mysql
 if [ ! -d var/lib/mysql/wp ]; then
 	service mysql start
-	chmod 744 /var/run/mysqld/mysqld.sock
+	chmod 777 /var/run/mysqld/mysqld.sock
 	mysql -u root -e "CREATE DATABASE IF NOT EXISTS $DB_NAME;"
 	mysql -u root -e "CREATE USER IF NOT EXISTS '$DB_USER'@'%' IDENTIFIED BY '$DB_PASS'"
 	mysql -u root -e "GRANT ALL ON $DB_NAME.* TO '$DB_USER'@'%'"
