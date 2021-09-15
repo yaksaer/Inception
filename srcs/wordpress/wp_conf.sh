@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 sed -i 's@listen = /run/php/php7.3-fpm.sock@listen = 9000@g' /etc/php/7.3/fpm/pool.d/www.confi
-sed -i 's/supervised no/supervised systemd/g' /etc/redis/redis.confi
+sed -i 's/supervised no/supervised systemd/g' /etc/redis/redis.conf
 mkdir -p /run/php
 touch /run/php/php7.3-fpm.pid
 chown -R www-data:www-data /var/www/*
