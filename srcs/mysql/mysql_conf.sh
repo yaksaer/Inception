@@ -14,6 +14,5 @@ fi
 if [ ! -d /var/run/mysqld ]; then
 	mkdir /var/run/mysqld
 	touch /var/run/mysqld/mysqld.pid
-	mkinfo /var/run/mysqld/mysqld.sock
 fi
 exec "$@"
