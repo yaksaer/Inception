@@ -13,6 +13,8 @@ services:
     ports:
       - 443:443
     container_name: nginx
+    depends_on: 
+      - wordpress
     networks: 
       - kseed_net
   mysql:
