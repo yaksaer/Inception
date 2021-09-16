@@ -1,12 +1,12 @@
 <?php
 
-define( 'DB_NAME', 'wp' );
+define( 'DB_NAME', '$DB_NAME' );
 
-define( 'DB_USER', 'kseed' );
+define( 'DB_USER', '$DB_USER' );
 
-define( 'DB_PASSWORD', 'kseed' );
+define( 'DB_PASSWORD', '$DB_PASS' );
 
-define( 'DB_HOST', 'kseed.42.fr' );
+define( 'DB_HOST', 'mariadb' );
 
 define( 'DB_CHARSET', 'utf8' );
 

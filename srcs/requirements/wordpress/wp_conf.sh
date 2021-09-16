@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+sed -i -e "s/\${DB_HOST}/${DB_HOST}/g" /wp-config.php;
+sed -i -e "s/\${DB_NAME}/${DB_NAME}/g" /wp-config.php;
+sed -i -e "s/\${DB_USER}/${DB_USER}/g" /wp-config.php;
+sed -i -e "s/\${DB_PASSWORD}/${DB_PASS}/g" /wp-config.php;
 sed -i 's@listen = /run/php/php7.3-fpm.sock@listen = 9000@g' /etc/php/7.3/fpm/pool.d/www.conf
 mkdir -p /run/php
 touch /run/php/php7.3-fpm.pid

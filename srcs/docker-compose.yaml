@@ -1,24 +1,23 @@
-version: '3.7'
+version: '3.9'
 networks:
   kseed_net:
     name: kseed_net
     driver: bridge
 
 services: 
-  mysql:
-    image: mysql
+  mariadb:
+    image: mariadb
     build: ./requirements/mariadb
     volumes: 
       - mysql:/var/lib/mysql
     user: root
     env_file:
       - .env
-    container_name: mysql
-    expose: 
-      - "3306"
+    container_name: mariadb
     networks: 
       - kseed_net
     restart: unless-stopped
+
   wordpress:
     image: wordpress
     build: ./requirements/wordpress
@@ -28,13 +27,11 @@ services:
       - .env
     container_name: wordpress
     depends_on: 
-      - mysql
-    expose:
-      - "9000"
-      - "3306"
+      - mariadb
     networks: 
       - kseed_net
     restart: unless-stopped
+
   nginx:
     image: nginx
     build: ./requirements/nginx
