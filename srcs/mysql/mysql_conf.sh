@@ -11,7 +11,8 @@ if [ ! -d var/lib/mysql/wp ]; then
 	mysql -u root -e "FLUSH PRIVILEGES"
 	mysqladmin -u root password $ROOT_PASS
 	service mysql stop
-else
+fi
+if [ ! -d /var/run/mysqld]; then
 	mkdir -p /var/run/mysqld
 	touch /var/run/mysqld/mysqld.pid
 	mkfifo /var/run/mysqld/mysqld.sock

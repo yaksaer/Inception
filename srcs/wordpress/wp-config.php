@@ -1,6 +1,6 @@
 <?php
 
-define( 'DB_NAME', 'wordpress' );
+define( 'DB_NAME', 'wp' );
 
 define( 'DB_USER', 'kseed' );
 

@@ -12,6 +12,7 @@ services:
       dockerfile: Dockerfile
     volumes: 
       - mysql:/var/lib/mysql
+    user: root
     env_file:
       - .env
     container_name: mysql
@@ -34,6 +35,7 @@ services:
       - mysql
     expose:
       - "9000"
+      - "3306"
     networks: 
       - kseed_net
     restart: unless-stopped
