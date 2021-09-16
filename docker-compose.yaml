@@ -12,7 +12,6 @@ services:
       dockerfile: Dockerfile
     volumes: 
       - mysql:/var/lib/mysql
-    user: root
     env_file: .env
     container_name: mariadb
     expose: 

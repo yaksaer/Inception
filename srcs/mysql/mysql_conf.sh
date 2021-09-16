@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-sed -i 's/bind-ad/#bind-ad/g' /etc/mysql/mariadb.conf.d/50-server.cnf
-sed -i 's/#port/port /g' /etc/mysql/mariadb.conf.d/50-server.cnf
+sed -i 's/bind-addr/\#bind-addr/g' /etc/mysql/mariadb.conf.d/50-server.cnf
+sed -i 's/#port /port /g' /etc/mysql/mariadb.conf.d/50-server.cnf
 chown -R mysql:mysql /var/lib/mysql
 if [ ! -d var/lib/mysql/wp ]; then
 	service mysql start
@@ -12,7 +12,7 @@ if [ ! -d var/lib/mysql/wp ]; then
 	mysqladmin -u root password $ROOT_PASS
 	service mysql stop
 else
-	mkdir /var/run/mysqld
+	mkdir -p /var/run/mysqld
 	touch /var/run/mysqld/mysqld.pid
 	mkfifo /var/run/mysqld/mysqld.sock
 fi
