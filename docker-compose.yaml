@@ -6,18 +6,20 @@ networks:
 
 services: 
   mysql:
-    image: mariadb
+    image: mysql
     build:
       context: ./srcs/mysql
       dockerfile: Dockerfile
     volumes: 
       - mysql:/var/lib/mysql
-    env_file: .env
-    container_name: mariadb
+    env_file:
+      - .env
+    container_name: mysql
     expose: 
       - "3306"
     networks: 
       - kseed_net
+    restart: unless-stopped
   wordpress:
     image: wordpress
     build: 
@@ -25,7 +27,8 @@ services:
       dockerfile: Dockerfile
     volumes: 
       - wordpress:/var/www/html
-    env_file: .env
+    env_file:
+      - .env
     container_name: wordpress
     depends_on: 
       - mysql
@@ -33,6 +36,7 @@ services:
       - "9000"
     networks: 
       - kseed_net
+    restart: unless-stopped
   nginx:
     image: nginx
     build:
@@ -47,6 +51,7 @@ services:
       - wordpress
     networks: 
       - kseed_net
+    restart: unless-stopped
      
 volumes:
   wordpress:
