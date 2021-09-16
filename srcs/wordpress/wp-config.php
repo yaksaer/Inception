@@ -6,7 +6,7 @@ define( 'DB_USER', 'kseed' );
 
 define( 'DB_PASSWORD', 'kseed' );
 
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', 'kseed.42.fr' );
 
 define( 'DB_CHARSET', 'utf8' );
 
