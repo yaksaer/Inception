@@ -4,7 +4,7 @@ if [ ! -d /etc/ssl/private/keyout.key ]; then
     -keyout /etc/ssl/keyout.key \
     -out /etc/ssl/sertif.crt
 fi
-chmod 744 ./nginx.conf
-cp ./nginx.conf /etc/nginx/sites-available
-ln -s /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled
+chmod 744 ./nginx.config
+cp ./nginx.config /etc/nginx/sites-available
+ln -s /etc/nginx/sites-available/nginx.config /etc/nginx/sites-enabled
 exec "$@"
