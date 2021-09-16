@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 sed -i 's/bind-ad/#bind-ad/g' /etc/mysql/mariadb.conf.d/50-server.cnf
-sed -i 's/#port /port /g' /etc/mysql/mariadb.conf.d/50-server.cnf
-chmod -R 755 /var/lib/mysql
+sed -i 's/#port/port /g' /etc/mysql/mariadb.conf.d/50-server.cnf
+chmod -R mysql:mysql /var/lib/mysql
 if [ ! -d var/lib/mysql/wp ]; then
 	service mysql start
 	chmod 755 /var/run/mysqld/mysqld.sock
