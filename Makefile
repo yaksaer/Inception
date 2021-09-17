@@ -1,15 +1,17 @@
-start:
-	./dir_maker.sh
+up:
 	docker-compose -f ./srcs/docker-compose.yaml up
 down:
 	docker-compose -f ./srcs/docker-compose.yaml down
 clean:
-	sudo rm -rf /home/kseed/data/wp/*
-	sudo rm -rf /home/kseed/data/db/*
+	rm -rf /home/kseed/data/wp/*
+	rm -rf /home/kseed/data/db/*
+	docker volume rm db
+	docker volume rm wp
 re:
-	./dir_maker.sh
 	docker-compose -f ./srcs/docker-compose.yaml up --build
-fclear:
-	sudo docker rm $$(docker ps -qa)
-	sudo docker volume rm $$(docker volume ls -q)
-	sudo docker network rm $$(docker network ls -q)
+fclean:
+	docker volume rm $$(docker volume ls -q)
+	docker network rm $$(docker network ls -q)
+	docker stop $$(docker ps -qa)
+	docker rm $$(docker ps -qa)
+	docker rmi $$(docker images -qa)

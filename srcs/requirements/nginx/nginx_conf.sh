@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
-if [ ! -d /etc/ssl/private/keyout.key ]; then
-	openssl req -x509 -nodes -days 10 -subj "/C=RU/ST=Russia/L=Moscow/O=School21/OU=21Moscow/CN=kseed" -newkey  rsa:2048 \
-    -keyout /etc/ssl/keyout.key \
-    -out /etc/ssl/sertif.crt
-fi
 chmod 744 ./nginx.config
 cp ./nginx.config /etc/nginx/sites-available
 ln -s /etc/nginx/sites-available/nginx.config /etc/nginx/sites-enabled
+rm -f /etc/nginx/sites-available/default
+sed -i "s/sites-enabled\/*/sites-enabled\/\*\.\*/" /etc/nginx/nginx.conf
 exec "$@"

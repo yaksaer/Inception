@@ -1,12 +1,12 @@
 <?php
 
-define( 'DB_NAME', '$DB_NAME' );
+define( 'DB_NAME', 'base_name' );
 
-define( 'DB_USER', '$DB_USER' );
+define( 'DB_USER', 'base_user' );
 
-define( 'DB_PASSWORD', '$DB_PASS' );
+define( 'DB_PASSWORD', 'base_pass' );
 
-define( 'DB_HOST', 'mariadb' );
+define( 'DB_HOST', 'base_host' );
 
 define( 'DB_CHARSET', 'utf8' );
 
