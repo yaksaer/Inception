@@ -3,7 +3,7 @@ FROM debian:buster
 RUN apt-get update
 RUN apt-get -y install mariadb-server vim
 
-COPY mysql_conf.sh ./
+COPY ./tools/mysql_conf.sh ./
 RUN chmod +x ./mysql_conf.sh
 
 EXPOSE 3306

@@ -10,4 +10,4 @@ clean:
 	docker volume rm db
 	docker volume rm wp
 fclean: clean
-	docker rmi $$(docker images -qa)
+	docker rmi -f $$(docker images -qa)

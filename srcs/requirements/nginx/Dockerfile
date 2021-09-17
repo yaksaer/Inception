@@ -7,8 +7,8 @@ RUN openssl req -x509 -nodes -days 10 -subj "/C=RU/ST=Russia/L=Moscow/O=School21
     -keyout /etc/ssl/keyout.key \
     -out /etc/ssl/sertif.crt
 
-COPY nginx_conf.sh ./
-COPY nginx.config ./
+COPY ./tools/nginx_conf.sh ./
+COPY ./tools/nginx.config ./
 RUN chmod 744 ./nginx_conf.sh
 RUN chmod 744 ./nginx.config
 
