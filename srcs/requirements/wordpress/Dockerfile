@@ -2,7 +2,7 @@ FROM debian:buster
 
 RUN apt-get update
 RUN apt-get -y upgrade
-RUN apt-get -y install wget vim php-fpm php-mysql php-mbstring php-gd php-redis php-xml
+RUN apt-get -y install wget vim php-fpm php-mysql php-xml
 
 COPY ./tools/wp_conf.sh ./wp_conf.sh
 COPY ./tools/wp-config.php ./wp-config.php
