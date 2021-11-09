@@ -1,4 +1,4 @@
-<h1 align="center">Inception - 42 school project</h1>
+<h1 align="center">Inception - 21 school project</h1>
 
 # Final grade 100/125
 
