@@ -37,5 +37,5 @@ Default values have been already set.
 ## Project work scheme
 <p align="center">
 
-<img src="https://github.com/yaksaer/images-vault/blob/master/Screenshot%20from%202021-11-09%2019-43-17.png?raw=true" >
+<img src="https://github.com/yaksaer/images-vault/blob/master/inception.png?raw=true" >
 </p>
